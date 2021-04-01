@@ -187,17 +187,25 @@ This section provides more information (especially for beginners) to understand 
 
 **How to define a new table**
 
+@Todo
+
 <br />
 
 **How to register the table**  in the admin section
+
+@Todo
 
 <br />
 
 **How to add new data in the table**  in the admin section
 
+@Todo
+
 <br />
 
 **How to import bulk information** (using import/export module)
+
+@Todo
 
 <br />
 
