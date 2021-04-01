@@ -115,7 +115,7 @@ The project is coded using a simple and intuitive structure presented below:
    |    |-- views.py                       # Serve HTML pages for authenticated users
    |    |-- urls.py                        # Define some super simple routes  
    |
-   |-- customers/                          # Handles the profile edit     <-------- NEW
+   |-- orders/                             # Handles and display ORDERS   <-------- NEW   
    |    |-- __init__.py                    # Defines App init             <-------- NEW
    |    |-- admin.py                       # Defines App admin            <-------- NEW
    |    |-- apps.py                        # Defines App apps             <-------- NEW
