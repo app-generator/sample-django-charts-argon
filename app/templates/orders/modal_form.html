@@ -1,0 +1,24 @@
+<div class="modal-body p-0">
+    <div class="card p-4">
+        <button type="button" class="close ml-auto" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        <div class="card-header border-0 text-center pb-0">
+            <h2 class="mb-0">{% if form.instance.id %}Edit Order ID {{ form.instance.id }}{% else %}Create
+                Order{% endif %}</h2>
+        </div>
+        <div class="card-body">
+            <!-- Form -->
+            <form method="{% if form.instance.id %}PUT{% else %}POST{% endif %}" action="{% if form.instance.id %}{% url 'orders' form.instance.id %}{% else %}{% url 'orders' %}{% endif %}">
+                {% for field in form %}
+                    <div class="form-group mb-4">
+                        {{ field.label_tag }}{{ field }}
+                    </div>
+                {% endfor %}
+                <button type="submit" class="btn btn-block btn-primary save-order">
+                    {% if form.instance.id %}Update{% else %}Create{% endif %}
+                </button>
+            </form>
+        </div>
+    </div>
+</div>

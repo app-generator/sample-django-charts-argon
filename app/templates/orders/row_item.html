@@ -1,0 +1,9 @@
+<tr>
+    <th scope="row">{{ order.id }}</th>
+    <td>{{ order.product_name }}</td>
+    <td>{{ order.price }}</td>
+    <td>{{ order.created_time|date:'Y-m-d' }}</td>
+    <td>
+        <a href="{% url 'orders' order.id %}" class="get-order-form">Edit</a>
+    </td>
+</tr>
