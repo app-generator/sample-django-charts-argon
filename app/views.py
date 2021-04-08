@@ -22,6 +22,10 @@ def index(request):
     context = {'segment': 'index'}
     html_template = loader.get_template('dashboard.html')
 
+    context.update(dict(Order.total_info()))
+    context['best_month'] = Order.best_month()
+    context['orders_month_report'] = Order.orders_month_report()
+
     context['orders'], context['info'] = set_pagination(request, Order.objects.all().order_by('-id'), item_numer=10)
     return HttpResponse(html_template.render(context, request))
 

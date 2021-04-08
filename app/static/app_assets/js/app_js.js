@@ -1,3 +1,4 @@
+var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 var modal = $('#modal-system');
 
 $(document).ready(function () {
@@ -68,3 +69,122 @@ function AjaxPOSTOrderForm(params) {
     });
 }
 
+
+// charts function
+
+function SalesChart(data, labels=months) {
+    // Variables
+    var sales_chart_data = [];
+    $.each(data, function (index, obj) {
+        sales_chart_data.push(obj.total_price);
+    });
+
+    var $chart = $('#chartSales');
+
+    var salesChart = new Chart($chart, {
+        type: 'line',
+        options: {
+            scales: {
+                yAxes: [{
+                    gridLines: {
+                        lineWidth: 1,
+                        color: Charts.colors.gray[900],
+                        zeroLineColor: Charts.colors.gray[900]
+                    },
+                    ticks: {
+                        callback: function (value) {
+                            if (!(value % 10)) {
+                                return '$' + value;
+                            }
+                        }
+                    }
+                }]
+            },
+            tooltips: {
+                callbacks: {
+                    label: function (item, data) {
+                        var label = data.datasets[item.datasetIndex].label || '';
+                        var yLabel = item.yLabel;
+                        var content = '';
+
+                        if (data.datasets.length > 1) {
+                            content += '<span class="popover-body-label mr-auto">' + label + '</span>';
+                        }
+
+                        content += '$' + parseFloat(yLabel).toFixed(2);
+                        return content;
+                    }
+                }
+            }
+        },
+        data: {
+            labels: labels,
+            datasets: [{
+                label: 'Performance',
+                data: sales_chart_data
+            }]
+        }
+    });
+
+    // Save to jQuery object
+    $chart.data('chart', salesChart);
+}
+
+function OrderChart(data, labels=months) {
+    var orders_chart_data = [];
+    $.each(data, function (index, obj) {
+        orders_chart_data.push(obj.total_order);
+    });
+
+    var $chart = $('#chartOrders');
+
+    var ordersChart = new Chart($chart, {
+        type: 'bar',
+        options: {
+            scales: {
+                yAxes: [{
+                    gridLines: {
+                        lineWidth: 1,
+                        color: '#dfe2e6',
+                        zeroLineColor: '#dfe2e6'
+                    },
+                    ticks: {
+                        callback: function (value) {
+                            if (!(value % 10)) {
+                                //return '$' + value + 'k'
+                                return value
+                            }
+                        }
+                    }
+                }]
+            },
+            tooltips: {
+                callbacks: {
+                    label: function (item, data) {
+                        var label = data.datasets[item.datasetIndex].label || '';
+                        var yLabel = item.yLabel;
+                        var content = '';
+
+                        if (data.datasets.length > 1) {
+                            content += '<span class="popover-body-label mr-auto">' + label + '</span>';
+                        }
+
+                        content += yLabel;
+
+                        return content;
+                    }
+                }
+            }
+        },
+        data: {
+            labels: labels,
+            datasets: [{
+                label: 'Sales',
+                data: orders_chart_data
+            }]
+        }
+    });
+
+    // Save to jQuery object
+    $chart.data('chart', ordersChart);
+}
