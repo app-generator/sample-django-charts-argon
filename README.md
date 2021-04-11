@@ -181,13 +181,109 @@ This section provides more information (especially for beginners) to understand 
 
 **How to create a new application in Django**
 
-@Todo
+Each application you write in Django consists of a Python package that follows a certain convention. Django comes with a utility that automatically generates the basic directory structure of an app, so you can focus on writing code rather than creating directories.
+
+To create your app, make sure you’re in the same directory as `manage.py` and type this command:
+
+```bash
+$ python manage.py startapp app
+```
+
+That’ll create a directory `app`, which is laid out like this:
+
+```bash
+|-- app/
+    |-- migrations/
+        |-- __init__.py
+    |-- __init__.py
+    |-- admin.py
+    |-- apps.py
+    |-- models.py
+    |-- tests.py
+    |-- views.py
+```
+
+Now, open up `core/settings.py`. It’s a normal Python module with module-level variables representing Django settings.
+
+Note the `INSTALLED_APPS` setting at the top of the file. That holds the names of all Django applications that are activated in this Django instance.
+
+By default, `INSTALLED_APPS` contains the following apps, all of which come with Django:
+
+- **django.contrib.admin:** The admin site. You’ll use it shortly.
+- **django.contrib.auth:** An authentication system.
+- **django.contrib.contenttypes:** A framework for content types.
+- **django.contrib.sessions:** A session framework.
+- **django.contrib.messages:** A messaging framework.
+- **django.contrib.staticfiles:** A framework for managing static files.
+
+> These applications are included by default as a convenience for the common case.
+
+Now add your created app to the `INSTALLED_APPS`, so you can use it.
+
+`core/settings.py`
+```python
+INSTALLED_APPS = [    
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    
+    'app',
+
+]
+```
 
 <br />
 
 **How to define a new table**
 
-@Todo
+First we need to open and edit the `app/models.py` file. In our app, we’ll create a model named **Order**.
+
+These concepts are represented by Python classes. Edit the `app/models.py` file so it looks like this:
+
+```python
+from django.db import models
+
+class Order(models.Model):
+    product_name = models.CharField(max_length=40)
+    price = models.FloatField()
+    created_time = models.DateTimeField(auto_now_add=True, db_index=True)
+    updated_time = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        verbose_name = 'order'
+        verbose_name_plural = 'orders'
+```
+
+Here, each model is represented by a class that subclasses `django.db.models.Model`. Each model has a number of class variables, each of which represents a database field in the model.
+
+Each field is represented by an instance of a **Field** class, e.g., **CharField** for character fields and **DateTimeField** for datetimes, and **FloatField** for float numbers. This tells Django what type of data each field holds.
+
+Now Django knows to include the app. Let’s run another command:
+
+```bash
+$ python manage.py makemigrations app
+```
+
+You should see something similar to the following:
+
+```bash
+Migrations for 'app':
+  app/migrations/0001_initial.py
+    - Create model Order
+```
+
+> By running `makemigrations`, you’re telling Django that you’ve made some changes to your models (in this case, you’ve made new ones) and that you’d like the changes to be stored as a migration.
+
+Now, run migrate again to create those model tables in your database:
+
+```bash
+$ python manage.py migrate
+```
+
+> The `migrate` command takes all the migrations that haven’t been applied and run them against your database. Essentially, synchronizing the changes you made to your models with the schema in the database.
 
 <br />
 

@@ -4,10 +4,10 @@ Copyright (c) 2019 - present AppSeed.us
 """
 
 import datetime
-from django.db import models
+
 from django.contrib.auth.models import User
-from django.db.models import Sum, Count, Max, F
-from django.db.models.functions import TruncMonth
+from django.db import models
+from django.db.models import Sum, Count, Max
 from django.template.defaultfilters import date
 
 
