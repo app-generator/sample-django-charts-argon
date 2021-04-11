@@ -33,9 +33,9 @@ def set_pagination(request, items, item_numer=10):
         page_range = ['...']
         page_range += [i for i in range(page - 3, page + 4)]
         page_range += ['...']
-    elif page in range(pages_number - 7, pages_number + 1):
-        page_range = ['...']
-        page_range += [i for i in range(pages_number - 7, pages_number + 1)]
+    elif page in range(pages_number - 7 if pages_number - 7 > 0 else 1, pages_number + 1):
+        page_range = ['...'] if pages_number - 7 > 0 else []
+        page_range += [i for i in range(pages_number - 7 if pages_number - 7 > 0 else 1, pages_number + 1)]
 
     context = dict(items=items, page_range=page_range, last=pages_number, url_params=urlencode(url_params))
     items.pagination = render_to_string('partial/pagination.html', context)
