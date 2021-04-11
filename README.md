@@ -261,7 +261,7 @@ from django.db import models
 class Order(models.Model):
     product_name = models.CharField(max_length=40)
     price = models.FloatField()
-    created_time = models.DateTimeField(auto_now_add=True, db_index=True)
+    created_time = models.DateTimeField(db_index=True)
     updated_time = models.DateTimeField(auto_now=True)
 
     class Meta:
