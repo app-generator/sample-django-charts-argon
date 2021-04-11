@@ -57,10 +57,14 @@ function AjaxPOSTOrderForm(params) {
 
             if (data.valid === 'success') {
                 if (params['method'] === 'PUT')
-                    $('.order-list').find(".get-order-form[href='"+params['url']+"']").closest('tr').replaceWith(data.item);
+                    $('.order-list').find(".get-order-form[href='" + params['url'] + "']").closest('tr').replaceWith(data.item);
                 else
                     $('.order-list tbody').prepend(data.item);
                 modal.modal('hide');
+
+                setTimeout(function () {
+                    location.reload();
+                }, 2000);
             }
         },
         error: function () {
@@ -72,7 +76,7 @@ function AjaxPOSTOrderForm(params) {
 
 // charts function
 
-function SalesChart(data, labels=months) {
+function SalesChart(data, labels = months) {
     // Variables
     var sales_chart_data = [];
     $.each(data, function (index, obj) {
@@ -130,7 +134,7 @@ function SalesChart(data, labels=months) {
     $chart.data('chart', salesChart);
 }
 
-function OrderChart(data, labels=months) {
+function OrderChart(data, labels = months) {
     var orders_chart_data = [];
     $.each(data, function (index, obj) {
         orders_chart_data.push(obj.total_order);

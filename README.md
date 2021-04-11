@@ -116,7 +116,17 @@ The project is coded using a simple and intuitive structure presented below:
    |    |-- urls.py                        # Define some super simple routes  
    |
    |-- orders/                             # Handles and display ORDERS   <-------- NEW   
-   |    |-- __init__.py                    # Defines App init             <-------- NEW
+   |    |-- migrations/                    # Handles and display ORDERS   <-------- NEW
+            |-- __init__.py
+        |-- static/                        # order CSS files, Javascripts files and static images
+            |-- orders_assets/
+                | -- jquery/
+                |-- js/
+                    |-- order_script.js
+                    |-- notify.js
+        |-- templates/                     # Templates used to render order pages
+            |-- orders/
+        |-- __init__.py                    # Defines App init             <-------- NEW
    |    |-- admin.py                       # Defines App admin            <-------- NEW
    |    |-- apps.py                        # Defines App apps             <-------- NEW
    |    |-- forms.py                       # Defines App forms            <-------- NEW
@@ -154,8 +164,9 @@ This table will save the information shown in the charts on the main dashboard -
 
 - ID: primary key
 - Product Name: string
-- Product Price: number
-- Transac_date: transaction timetimestamp
+- Product Price: float
+- Created Times: create transaction datetime
+- Updated Times: update transaction datetime
 
 <br />
 
@@ -186,13 +197,13 @@ Each application you write in Django consists of a Python package that follows a
 To create your app, make sure you’re in the same directory as `manage.py` and type this command:
 
 ```bash
-$ python manage.py startapp app
+$ python manage.py startapp orders
 ```
 
-That’ll create a directory `app`, which is laid out like this:
+That’ll create a directory `orders`, which is laid out like this:
 
 ```bash
-|-- app/
+|-- orders/
     |-- migrations/
         |-- __init__.py
     |-- __init__.py
@@ -230,7 +241,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     
-    'app',
+    # ...
+    'orders',
 
 ]
 ```
@@ -239,9 +251,9 @@ INSTALLED_APPS = [
 
 **How to define a new table**
 
-First we need to open and edit the `app/models.py` file. In our app, we’ll create a model named **Order**.
+First we need to open and edit the `orders/models.py` file. In our app, we’ll create a model named **Order**.
 
-These concepts are represented by Python classes. Edit the `app/models.py` file so it looks like this:
+These concepts are represented by Python classes. Edit the `orders/models.py` file so it looks like this:
 
 ```python
 from django.db import models
@@ -261,10 +273,10 @@ Here, each model is represented by a class that subclasses `django.db.models.Mod
 
 Each field is represented by an instance of a **Field** class, e.g., **CharField** for character fields and **DateTimeField** for datetimes, and **FloatField** for float numbers. This tells Django what type of data each field holds.
 
-Now Django knows to include the app. Let’s run another command:
+Now Django knows to include the orders app. Let’s run another command:
 
 ```bash
-$ python manage.py makemigrations app
+$ python manage.py makemigrations orders
 ```
 
 You should see something similar to the following:
@@ -289,19 +301,93 @@ $ python manage.py migrate
 
 **How to register the table**  in the admin section
 
-@Todo
+- `Easy Way`: It's very simple. first you must import admin from `django.contrib` and the table (`Order`) you want to set up an admin interface and then follow the codes:
+
+```python
+from django.contrib import admin
+from orders.models import Order
+
+admin.site.register(Order)
+```
+
+- `Custom way`: In this way you can customize your admin page more. So, first as before you must import admin from `django.contrib` and the table (`Order`) you want to set up an admin interface create a class for your admin page like this:
+
+```python
+from django.contrib import admin
+from orders.models import Order
+
+@admin.register(Order)
+class OrderAdmin(admin.ModelAdmin):
+    list_display = ['product_name', 'price', 'created_time']
+    search_fields = ['product_name']
+```
+
+In this case you have more option to use.
 
 <br />
 
 **How to add new data in the table**  in the admin section
 
-@Todo
+This is so easy. Just go to the admin section and click on the desired app (`Orders`). In this section, you will see the `Add` (`ADD ORDER +`) option. After clicking on it, you can fill the form and click the `Save` button to store your information in the database.
 
 <br />
 
 **How to import bulk information** (using import/export module)
 
-@Todo
+`django-import-export` is a Django application and library for importing and exporting data with included admin integration.
+
+- `Installation and configuration`: django-import-export is available on the Python Package Index (PyPI), so it can be installed with standard Python tools like `pip` or `easy_install`:
+
+```bash
+$ pip install django-import-export
+```
+
+Now, you’re good to go, Just you need to add `import_export` to your INSTALLED_APPS:
+
+```python
+# settings.py
+INSTALLED_APPS = (
+    ...
+    'import_export',
+)
+```
+
+And let Django collect its static files:
+
+```bash
+$ python manage.py collectstatic
+```
+
+All prerequisites are set up. Now you can [configure more](https://django-import-export.readthedocs.io/en/latest/installation.html#settings) in your settings file.
+
+- `Getting started`: For example purposes, we’ll use a simplified `orders` app as we made it.
+
+To integrate `django-import-export` with our `Order` model, we will create a `ModelResource` class in `admin.py` that will describe how this resource can be `imported` or `exported`.
+
+**Import Data:**
+```python
+# orders/admin.py
+
+from django.contrib import admin
+from import_export import resources
+from import_export.admin import ImportMixin
+from orders.models import Order
+
+class OrderResource(resources.ModelResource):
+    class Meta:
+        model = Order
+        fields = ['id', 'product_name', 'price', 'created_time']  # the fields that we want to import
+
+@admin.register(Order)
+class OrderAdmin(ImportMixin, admin.ModelAdmin):
+    list_display = ['product_name', 'price', 'created_time']
+    search_fields = ['product_name']
+    resource_class = OrderResource
+```
+
+There you are, Now you can import data from files. [Sample File](https://github.com/app-generator/django-argon-charts/blob/master/media/sample_data/orders.csv).
+
+You can take a look at the [django-import-export](https://django-import-export.readthedocs.io/en/latest/index.html) document for more information.
 
 <br />
 

@@ -7,7 +7,7 @@ from django.template.loader import render_to_string
 
 def set_pagination(request, items, item_numer=10):
     if not items:
-        return True, "These is no items"
+        return False, "These is no items"
 
     params = request.GET
     item_len = len(items)
