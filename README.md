@@ -164,7 +164,7 @@ This table will save the information shown in the charts on the main dashboard -
 
 - ID: primary key
 - Product Name: string
-- Product Price: float
+- Product Price: int
 - Created Times: create transaction datetime
 - Updated Times: update transaction datetime
 
@@ -260,7 +260,7 @@ from django.db import models
 
 class Order(models.Model):
     product_name = models.CharField(max_length=40)
-    price = models.FloatField()
+    price = models.IntegerField()
     created_time = models.DateTimeField(db_index=True)
     updated_time = models.DateTimeField(auto_now=True)
 
@@ -271,7 +271,7 @@ class Order(models.Model):
 
 Here, each model is represented by a class that subclasses `django.db.models.Model`. Each model has a number of class variables, each of which represents a database field in the model.
 
-Each field is represented by an instance of a **Field** class, e.g., **CharField** for character fields and **DateTimeField** for datetimes, and **FloatField** for float numbers. This tells Django what type of data each field holds.
+Each field is represented by an instance of a **Field** class, e.g., **CharField** for character fields and **DateTimeField** for datetimes, and **IntegerField** for numbers. This tells Django what type of data each field holds.
 
 Now Django knows to include the orders app. Let’s run another command:
 
