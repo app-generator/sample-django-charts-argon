@@ -24,8 +24,7 @@ class OrderView(View):
     def post(self, request, pk=None, action=None):
         form = OrderForm(request.POST)
         if form.is_valid():
-            order = form.save(commit=False)
-            order.created_time = datetime.now()
+            order = form.save()
             item = render_to_string('orders/row_item.html', {'order': order})
 
             response = {'valid': 'success', 'message': 'order created successfully.', 'item': item}
