@@ -11,8 +11,11 @@ from django.template.defaultfilters import date
 
 
 class Order(models.Model):
+    MONTHS = {1: 'Jan', 2: 'Feb', 3: 'Mar', 4: 'Apr', 5: 'May', 6: 'Jun', 7: 'Jul', 8: 'Aug', 9: 'Sep', 10: 'Oct',
+              11: 'Nov', 12: 'Dec'}
+
     product_name = models.CharField(max_length=40)
-    price = models.FloatField()
+    price = models.IntegerField()
     created_time = models.DateTimeField(db_index=True)
     updated_time = models.DateTimeField(auto_now=True)
 
@@ -35,5 +38,18 @@ class Order(models.Model):
 
     @classmethod
     def orders_month_report(cls):
-        queryset = cls.objects.values('created_time__month').annotate(total_order=Count('id'), total_price=Sum('price'))
-        return list(queryset)
+        now = datetime.datetime.now()
+        filter_params = {
+            'created_time__date__gte': '{year}-{month}-{day}'.format(year=now.year - 1, month=now.month + 1,
+                                                                     day=now.day),
+            'created_time__date__lte': now.date()
+        }
+
+        annotate_params = {
+            'total_order': Count('id'),
+            'total_price': Sum('price')
+        }
+
+        queryset = cls.objects.filter(**filter_params).values('created_time__year', 'created_time__month').annotate(**annotate_params)
+
+        return list(queryset), [cls.MONTHS[data.get('created_time__month')] for data in queryset]

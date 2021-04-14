@@ -115,7 +115,7 @@ function SalesChart(data, labels = months) {
                             content += '<span class="popover-body-label mr-auto">' + label + '</span>';
                         }
 
-                        content += '$' + parseFloat(yLabel).toFixed(2);
+                        content += '$' + yLabel;
                         return content;
                     }
                 }
