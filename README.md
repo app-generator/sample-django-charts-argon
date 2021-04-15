@@ -31,8 +31,8 @@ Open-source **Django** Sample provided on top of **Argon Dashboard** design (fre
 
 > Links
 
-- [Django Dashboard Argon - Demo](https://django-argon-charts.appseed-srv1.com) - LIVE deployment
-- [Django Dashboard Argon](https://www.creative-tim.com/product/argon-dashboard-django) - product page
+- [Django Argon Charts](https://django-argon-charts.appseed-srv1.com) - LIVE deployment
+- [Argon Dashboard Django](https://www.creative-tim.com/product/argon-dashboard-django) - the original starter
 
 <br />
 
@@ -95,8 +95,6 @@ $ python manage.py migrate
 
 ```bash
 $ python manage.py createsuperuser 
-$
-$ # provide user, email and password
 ```
 
 <br />
@@ -426,4 +424,4 @@ You can take a look at the [django-import-export](https://django-import-export.r
 <br />
 
 ---
-[Django Argon Charts](https://appseed.us/admin-dashboards/django-dashboard-argon) - Provided by Creative-Tim and AppSeed.
+[Django Argon Charts](https://django-argon-charts.appseed-srv1.com) - Provided by Creative-Tim and AppSeed.
