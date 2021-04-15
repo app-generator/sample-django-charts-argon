@@ -1,6 +1,6 @@
 # Django Argon Charts 
 
-Open-source **Django** Sample provided on top of **Argon Dashboard** design (free version). The sample provides functional code that shows different metrics regarding the sales in the last 12mo: total sales, total orders, best sale and best month (in sales value). Information is provided using charts, widgets and a paginated data table that allows editing/adding new sales. 
+Open-source **Django** Sample provided on top of **Argon Dashboard** design (free version). **Django Argon Charts** sample provides functional code that shows different metrics regarding the sales in the last 12mo: total sales, total orders, best sale and best month (in sales value). Information is provided using charts, widgets and a paginated data table that allows editing/adding new sales. 
 
 <br />
 
@@ -16,16 +16,6 @@ Open-source **Django** Sample provided on top of **Argon Dashboard** design (fre
 - `Widget 2`: Peek Sale - transaction with Biggest Value
 - `Widget 3`: Total Orders (sum up of all transactions)
 - `Widget 4`: Best Month - selected by the number of orders
-
-<br />
-
-> **Codebase Features**
-
-- UI-Ready app, SQLite Database, Django Native ORM
-- Modular design, clean code-base
-- Session-Based Authentication, Forms validation
-- Deployment scripts: Docker, Gunicorn / Nginx
-- Support via **Github** and [Discord](https://discord.gg/fZC6hup).
 
 <br />
 
