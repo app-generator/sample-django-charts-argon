@@ -418,7 +418,7 @@ You can take a look at the [django-import-export](https://django-import-export.r
 ### Links & Resources
 
 - [Django](https://www.djangoproject.com/) - the official website
-- More [Django Templates](https://themesberg.com/templates/django) provided by Themesberg 
+- More [Django Templates](https://bit.ly/3aStaNb) provided by Creative-Tim 
 - More [Django Dashboards](http://appseed.us/admin-dashboards/django) provided by AppSeed
 
 <br />
