@@ -33,7 +33,7 @@ class Order(models.Model):
         month_price = cls.objects.values_list('created_time__month').annotate(total=Sum('price'))
         if month_price:
             res['month'], res['price'] = max(month_price, key=lambda i: i[1])
-            res['month_name'] = date(datetime.date(datetime.datetime.now().year, month=10, day=1), 'F')
+            res['month_name'] = date(datetime.date(datetime.datetime.now().year, month=res['month'], day=1), 'F')
         return res
 
     @classmethod
