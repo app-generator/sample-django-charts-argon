@@ -27,7 +27,6 @@ def index(request):
         messages.warning(request, context['info'])
     return HttpResponse(html_template.render(context, request))
 
-
 @login_required(login_url="/login/")
 def pages(request):
     context = {}
