@@ -32,6 +32,7 @@ Open-source **Django** Sample provided on top of **Argon Dashboard** design (fre
 > Links
 
 - [Django Argon Charts](https://django-argon-charts.appseed-srv1.com) - LIVE deployment
+- [Django Graphs and Charts](https://www.creative-tim.com/blog/django-templates/django-graphs-charts-argon-dashboard/) - a comprehensive blog article
 - [Argon Dashboard Django](https://www.creative-tim.com/product/argon-dashboard-django) - the original starter
 
 <br />
