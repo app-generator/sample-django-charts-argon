@@ -23,7 +23,7 @@ Open-source **Django** Sample provided on top of **Argon Dashboard** design (fre
 
 - [Django Argon Charts](https://django-argon-charts.appseed-srv1.com) - LIVE deployment
 - [Django Graphs and Charts](https://www.creative-tim.com/blog/django-templates/django-graphs-charts-argon-dashboard/) - a comprehensive blog article
-- [Argon Dashboard Django](https://www.creative-tim.com/product/argon-dashboard-django) - the original starter
+- [Argon Dashboard Django](https://bit.ly/3si4e7q) - the original starter
 
 <br />
 
@@ -31,9 +31,9 @@ Open-source **Django** Sample provided on top of **Argon Dashboard** design (fre
 
 PRO versions include **Premium UI Kits**, updates and **Priority Support**
 
-| [Django Argon PRO](https://www.creative-tim.com/product/argon-dashboard-pro-django) | [Django Black PRO](https://www.creative-tim.com/product/black-dashboard-pro-django) | [Django Datta Able PRO](https://appseed.us/admin-dashboards/django-dashboard-dattaable-pro) |
+| [Django Argon PRO](https://bit.ly/3gEXOx5) | [Django Black PRO](https://bit.ly/37Q9mbp) | [Django Datta Able PRO](https://appseed.us/admin-dashboards/django-dashboard-dattaable-pro) |
 | --- | --- | --- |
-| [![Django Argon PRO](https://raw.githubusercontent.com/app-generator/django-dashboard-argon-pro/master/media/django-dashboard-argon-pro-screen.png)](https://www.creative-tim.com/product/argon-dashboard-pro-django) | [![Django Black PRO](https://raw.githubusercontent.com/app-generator/django-dashboard-black-pro/master/media/django-dashboard-black-pro-screen.png)](https://www.creative-tim.com/product/black-dashboard-pro-django) | [![Django Datta PRO](https://raw.githubusercontent.com/app-generator/django-dashboard-dattaable-pro/master/media/django-dashboard-dattaable-pro-screen.png)](https://appseed.us/admin-dashboards/django-dashboard-dattaable-pro)
+| [![Django Argon PRO](https://raw.githubusercontent.com/app-generator/django-dashboard-argon-pro/master/media/django-dashboard-argon-pro-screen.png)](https://bit.ly/3gEXOx5) | [![Django Black PRO](https://raw.githubusercontent.com/app-generator/django-dashboard-black-pro/master/media/django-dashboard-black-pro-screen.png)](https://bit.ly/37Q9mbp) | [![Django Datta PRO](https://raw.githubusercontent.com/app-generator/django-dashboard-dattaable-pro/master/media/django-dashboard-dattaable-pro-screen.png)](https://appseed.us/admin-dashboards/django-dashboard-dattaable-pro)
 
 <br />
 <br />
