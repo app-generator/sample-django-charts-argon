@@ -132,16 +132,16 @@ The project is coded using a simple and intuitive structure presented below:
    |
    |-- orders/                             # Handles and display ORDERS   <-------- NEW   
    |    |-- migrations/                    # Handles and display ORDERS   <-------- NEW
-            |-- __init__.py
-        |-- static/                        # order CSS files, Javascripts files and static images
-            |-- orders_assets/
-                | -- jquery/
-                |-- js/
-                    |-- order_script.js
-                    |-- notify.js
-        |-- templates/                     # Templates used to render order pages
-            |-- orders/
-        |-- __init__.py                    # Defines App init             <-------- NEW
+   |    |   |-- __init__.py
+   |    |-- static/                        # order CSS files, Javascripts files and static images
+   |    |   |-- orders_assets/
+   |    |       | -- jquery/
+   |    |       |-- js/
+   |    |           |-- order_script.js
+   |    |           |-- notify.js
+   |    |-- templates/                     # Templates used to render order pages
+   |    |   |-- orders/
+   |    |-- __init__.py                    # Defines App init             <-------- NEW
    |    |-- admin.py                       # Defines App admin            <-------- NEW
    |    |-- apps.py                        # Defines App apps             <-------- NEW
    |    |-- forms.py                       # Defines App forms            <-------- NEW
