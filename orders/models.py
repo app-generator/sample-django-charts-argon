@@ -39,8 +39,15 @@ class Order(models.Model):
     @classmethod
     def orders_month_report(cls):
         now = datetime.datetime.now()
+
+        month_val = now.month + 1
+
+        # Limit the upper value
+        if month_val > 12:
+            month_val = 12
+        
         filter_params = {
-            'created_time__date__gte': '{year}-{month}-{day}'.format(year=now.year - 1, month=now.month + 1,
+            'created_time__date__gte': '{year}-{month}-{day}'.format(year=now.year - 1, month=month_val,
                                                                      day=now.day),
             'created_time__date__lte': now.date()
         }
