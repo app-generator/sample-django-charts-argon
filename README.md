@@ -8,6 +8,14 @@ Open-source Sample provided on top of **[Argon Dashboard Django](https://bit.ly/
 
 <br />
 
+## [Black Friday](https://appseed.us/discounts/) - `75%OFF`
+
+> The campaign is active until `30.NOV` and applies to all products and licenses.
+
+[![AppSeed - Black Friday 2022 Campaign, 75% OFF Discount (all products).](https://user-images.githubusercontent.com/51070104/201829599-9fe6bdd7-3f19-46f3-9115-962eeb13bf29.jpg)](https://appseed.us/discounts/)
+
+<br />
+
 > App Features
 
 - ✅ Manage orders and display the information visually using charts and widgets
@@ -20,14 +28,6 @@ Open-source Sample provided on top of **[Argon Dashboard Django](https://bit.ly/
 - ✅ `Widget 2`: Peek Sale - transaction with Biggest Value
 - ✅ `Widget 3`: Total Orders (sum up of all transactions)
 - ✅ `Widget 4`: Best Month - selected by the number of orders
-
-<br />
-
-## [Black Friday](https://appseed.us/discounts/) - `75%OFF`
-
-> The campaign is active until `30.NOV` and applies to all products and licenses.
-
-[![AppSeed - Black Friday 2022 Campaign, 75% OFF Discount (all products).](https://user-images.githubusercontent.com/51070104/201829599-9fe6bdd7-3f19-46f3-9115-962eeb13bf29.jpg)](https://appseed.us/discounts/)
 
 <br />
 
