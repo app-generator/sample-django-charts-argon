@@ -2,43 +2,32 @@
 
 Open-source Sample provided on top of **[Argon Dashboard Django](https://bit.ly/3si4e7q)** (free product). **Django Argon Charts** sample provides functional code that shows different metrics regarding a 12mo timeframe: total sales, total orders, best sale and best month (in sales value). Information is provided using charts, widgets and a paginated data table that allows editing/adding new sales. 
 
-<br />
-
-> App Features
-
-- Manage orders and display the information visually using charts and widgets
-- Table `Orders` store the information - properties:
-    - ID, Product Name (mandatory), Price, Created Times, Updated Times.
-- `Charts`: Line and Bar Charts:
-    - `Line Chart` shows the sales for a 12mo timeframe
-    - `Bar Chart` shows the sales for a 12mo timeframe
-- `Widget 1`: Total Sales (in value)
-- `Widget 2`: Peek Sale - transaction with Biggest Value
-- `Widget 3`: Total Orders (sum up of all transactions)
-- `Widget 4`: Best Month - selected by the number of orders
-
-<br />
-
-> Links
-
 - [Django Argon Charts](https://django-argon-charts.appseed-srv1.com) - LIVE deployment
 - [Django Graphs and Charts](https://www.creative-tim.com/blog/django-templates/django-graphs-charts-argon-dashboard/) - a comprehensive blog article
 - [Argon Dashboard Django](https://bit.ly/3si4e7q) - the original starter
 
 <br />
 
-## Want more? Go PRO!
+> App Features
 
-PRO versions include **Premium UI Kits**, updates and **Priority Support**
-
-| [Django Argon PRO](https://bit.ly/3gEXOx5) | [Django Black PRO](https://bit.ly/37Q9mbp) | [Django Datta Able PRO](https://appseed.us/admin-dashboards/django-dashboard-dattaable-pro) |
-| --- | --- | --- |
-| [![Django Argon PRO](https://raw.githubusercontent.com/app-generator/django-dashboard-argon-pro/master/media/django-dashboard-argon-pro-screen.png)](https://bit.ly/3gEXOx5) | [![Django Black PRO](https://raw.githubusercontent.com/app-generator/django-dashboard-black-pro/master/media/django-dashboard-black-pro-screen.png)](https://bit.ly/37Q9mbp) | [![Django Datta PRO](https://raw.githubusercontent.com/app-generator/django-dashboard-dattaable-pro/master/media/django-dashboard-dattaable-pro-screen.png)](https://appseed.us/admin-dashboards/django-dashboard-dattaable-pro)
+- ✅ Manage orders and display the information visually using charts and widgets
+- ✅ Table `Orders` store the information - properties:
+    - ID, Product Name (mandatory), Price, Created Times, Updated Times.
+- ✅ `Charts`: Line and Bar Charts:
+    - `Line Chart` shows the sales for a 12mo timeframe
+    - `Bar Chart` shows the sales for a 12mo timeframe
+- ✅ `Widget 1`: Total Sales (in value)
+- ✅ `Widget 2`: Peek Sale - transaction with Biggest Value
+- ✅ `Widget 3`: Total Orders (sum up of all transactions)
+- ✅ `Widget 4`: Best Month - selected by the number of orders
 
 <br />
-<br />
 
-![Django Argon Charts - Open-source Django Sample provided by AppSeed.](https://raw.githubusercontent.com/app-generator/django-argon-charts/master/media/django-argon-charts-mockup.png)
+## [Black Friday](https://appseed.us/discounts/) - `75%OFF`
+
+> The campaign is active until `30.NOV` and applies to all products and licenses.
+
+[![AppSeed - Black Friday 2022 Campaign, 75% OFF Discount (all products).](https://user-images.githubusercontent.com/51070104/201829599-9fe6bdd7-3f19-46f3-9115-962eeb13bf29.jpg)](https://appseed.us/discounts/)
 
 <br />
 
