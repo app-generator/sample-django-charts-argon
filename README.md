@@ -6,15 +6,7 @@ Open-source Sample provided on top of **[Argon Dashboard Django](https://bit.ly/
 - [Django Graphs and Charts](https://www.creative-tim.com/blog/django-templates/django-graphs-charts-argon-dashboard/) - a comprehensive blog article
 - [Argon Dashboard Django](https://bit.ly/3si4e7q) - the original starter
 
-<br />
-
-## [Black Friday](https://appseed.us/discounts/) - `75%OFF`
-
-> The campaign is active until `30.NOV` and applies to all products and licenses.
-
-[![AppSeed - Black Friday 2022 Campaign, 75% OFF Discount (all products).](https://user-images.githubusercontent.com/51070104/201829599-9fe6bdd7-3f19-46f3-9115-962eeb13bf29.jpg)](https://appseed.us/discounts/)
-
-<br />
+<br /> 
 
 > App Features
 
